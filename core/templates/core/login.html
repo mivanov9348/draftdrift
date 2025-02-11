@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post" id="login-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label_tag }}
+            <div class="password-wrapper">
+                {{ form.password }}
+                <button type="button" id="toggle-password">Show</button>
+            </div>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+</div>
+<script src="{% static 'core/login.js' %}"></script>
+{% endblock %}
