@@ -6,23 +6,19 @@
     <form method="post" id="register-form">
         {% csrf_token %}
 
-        <!-- Показване на полето за потребителско име -->
         <div class="form-group">
             {{ form.username.label_tag }}
             {{ form.username }}
         </div>
 
-        <!-- Показване на първото поле за парола -->
         <div class="form-group">
             {{ form.password1.label_tag }}
             <div class="password-wrapper">
                 {{ form.password1 }}
-                <!-- Добавяме бутон за превключване на видимостта на паролата -->
                 <button type="button" class="toggle-password" data-target="id_password1">Show</button>
             </div>
         </div>
 
-        <!-- Показване на второто поле за потвърждение на паролата -->
         <div class="form-group">
             {{ form.password2.label_tag }}
             <div class="password-wrapper">

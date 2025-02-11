@@ -6,16 +6,72 @@ body {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #333;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-nav a {
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+nav a, .dropbtn {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
 }
-/* Контейнерът на формата */
+
+nav a:hover, .dropbtn:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown меню */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+/* Показване на менюто при hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Акаунт менюто да е вдясно */
+.account-dropdown {
+    margin-left: auto;
+}
+
+
 .login-container {
     width: 320px;
     margin: 50px auto;
@@ -26,19 +82,16 @@ nav a {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Заглавие на формата */
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Групите на полетата */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Етикетите */
 .form-group label {
     display: block;
     margin-bottom: 5px;
