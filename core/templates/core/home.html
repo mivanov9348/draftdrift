@@ -1,5 +1,48 @@
 {% extends "core/base.html" %}
+{% load static %}
+
 {% block content %}
-    <h1>Welcome to DraftDrift</h1>
-    <p>Your space for writing stories and building worlds.</p>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("{% static 'images/home.png' %}") no-repeat center center;
+        }
+
+        .add-world-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .add-world-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-world-btn span {
+            margin-left: 8px;
+            font-size: 24px;
+        }
+    </style>
+
+    <div class="container">
+        {% if user.is_authenticated %}
+            <a href="{% url 'world:create_world' %}" class="add-world-btn">
+                Add World <span>+</span>
+            </a>
+        {% endif %}
+    </div>
 {% endblock %}
