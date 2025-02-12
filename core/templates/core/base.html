@@ -13,8 +13,22 @@
     <a href="{% url 'home' %}" class="logo">DraftDrift</a>
 
     {% if user.is_authenticated %}
-    <a href="" class="nav-link">Read</a>
-    <a href="" class="nav-link">Writing</a>
+    <div class="dropdown">
+        <button class="dropbtn">Worlds</button>
+        <div class="dropdown-content">
+            <a href="{% url 'world:create_world' %}">Create World</a>
+            <a href="">My Worlds</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Characters</button>
+        <div class="dropdown-content">
+            <a href="{}">Create Character</a>
+            <a href="{}">My Characters</a>
+        </div>
+    </div>
+
     <a href="" class="nav-link">Feed</a>
 
     <div class="dropdown account-dropdown">
